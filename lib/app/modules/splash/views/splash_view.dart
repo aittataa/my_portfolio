@@ -14,7 +14,7 @@ class SplashView extends StatelessWidget {
         nextScreen: HomeView(),
         curve: AppConstant.curve,
         backgroundColor: AppTheme.primaryBackColor,
-        splashTransition: SplashTransition.fadeTransition,
+        splashTransition: SplashTransition.slideTransition,
         animationDuration: AppConstant.durationSplash,
         splashIconSize: double.infinity,
       ),

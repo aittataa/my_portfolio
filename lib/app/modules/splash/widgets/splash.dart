@@ -5,6 +5,6 @@ import 'package:my_portfolio/app/shared/bounce_point.dart';
 class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BouncePoint(color: AppTheme.mainColor);
+    return BouncePoint(color: AppTheme.mainColor, state: true);
   }
 }
