@@ -9,7 +9,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Text(
-          'HomeView is working',
+          'Portfolio',
           style: TextStyle(fontSize: 20),
         ),
       ),
