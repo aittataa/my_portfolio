@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_portfolio/app/config/functions/app_function.dart';
+import 'package:my_portfolio/app/config/messages/app_message.dart';
+import 'package:my_portfolio/app/config/themes/app_theme.dart';
 import 'package:my_portfolio/app/routes/app_pages.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  AppFunction.configureDependencies();
   runApp(Portfolio());
 }
 
@@ -12,8 +17,11 @@ class Portfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "Application",
+      debugShowCheckedModeBanner: false,
+      smartManagement: SmartManagement.full,
       initialRoute: AppPages.INITIAL,
+      title: AppMessage.appTitle,
+      theme: AppTheme.themeData,
       getPages: AppPages.routes,
     );
   }
