@@ -30,7 +30,7 @@ class AppMessage {
   static const String registerTitle = "Sign in";
 
   /// TODO : Initial View
-  static const String appTitle = "MultiKart";
+  static const String appTitle = "AIT TATA ABDERRAHIM";
 
   /// TODO : Home View
   static const String labelHome = "Home";
