@@ -2,7 +2,7 @@
     package="com.aittataa.my_portfolio">
    <application
         android:label="my_portfolio"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/app_icon_round">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:my_portfolio/app/config/constants/app_constant.dart';
-import 'package:my_portfolio/app/config/themes/app_theme.dart';
 
 class BouncePoint extends StatelessWidget {
   final bool? state;
@@ -21,19 +20,19 @@ class BouncePoint extends StatelessWidget {
       case true:
         return SpinKitThreeBounce(
           size: size,
-          color: color ?? AppTheme.secondaryBackColor,
+          color: color,
           duration: AppConstant.durationSplash,
         );
       case false:
         return SpinKitCubeGrid(
           size: size,
-          color: color ?? AppTheme.secondaryBackColor,
+          color: color,
           duration: AppConstant.durationSplash,
         );
       default:
         return SpinKitSquareCircle(
           size: size,
-          color: color ?? AppTheme.secondaryBackColor,
+          color: color,
           duration: AppConstant.durationSplash,
         );
     }

@@ -9,14 +9,24 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: AnimatedSplashScreen(
-        splash: Splash(),
-        nextScreen: HomeView(),
-        curve: AppConstant.curve,
-        backgroundColor: AppTheme.primaryBackColor,
-        splashTransition: SplashTransition.slideTransition,
-        animationDuration: AppConstant.durationSplash,
-        splashIconSize: double.infinity,
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              AppTheme.backgroundColor_1,
+              AppTheme.backgroundColor_2,
+            ],
+          ),
+        ),
+        child: AnimatedSplashScreen(
+          splash: Splash(),
+          nextScreen: HomeView(),
+          curve: AppConstant.curve,
+          backgroundColor: AppTheme.transparentColor,
+          splashTransition: SplashTransition.slideTransition,
+          animationDuration: AppConstant.durationSplash,
+          splashIconSize: double.infinity,
+        ),
       ),
     );
   }

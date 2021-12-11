@@ -3,51 +3,25 @@ import 'package:flutter/material.dart';
 class AppTheme {
   AppTheme._();
 
-  //static bool isLightMode({ThemeMode mode = ThemeMode.light}) => mode == ThemeMode.light;
+  // static const Color clearColor = Color(0xff08ff00);
+  // static const Color errorColor = Color(0xfffd0000);
 
-  static const Color clearColor = Color(0xff08ff00);
-  static const Color errorColor = Color(0xfffd0000);
-
-  static const Color mainColor = Color(0xFFFF4C3B);
-  static const Color backgroundColor = Color(0xFFF0F0F0);
-  static const Color backgroundImageColor = Color(0xFFFFFFFF); //F8F8F8
-  static const Color primaryBackColor = Color(0xFFFFFFFF);
-  static const Color secondaryBackColor = Color(0xFFBDBDBD); //BDBDBD
+  static const Color mainColor = Color(0xFFF0F0F0);
+  static const Color backgroundColor_1 = Color(0xFF213a50);
+  static const Color backgroundColor_2 = Color(0xFF071930);
   static const Color transparentColor = Color(0x00000000);
   static const Color shadowColor = Color(0x1F000000);
   static const Color borderColor = Color(0x8A000000);
 
   /// Icon Colors
-  static const Color mainIconColor = Color(0xFFF44336);
-  static const Color primaryIconColor = Color(0xFF000000);
-  static const Color secondaryIconColor = Color(0xFFFFFFFF);
-
-  /// Field Text Colors
-  static const Color fieldTextBackground = Color(0xFFE5E5E5);
+  static const Color primaryIconColor = Color(0xFFFFFFFF);
+  static const Color secondaryIconColor = Color(0xFF000000);
 
   /// Text Colors
-  static const Color primaryTextColor = Color(0xFF000000);
-  static const Color secondaryTextColor = Color(0xFFFFFFFF);
+  static const Color primaryTextColor = Color(0xFFFFFFFF);
+  static const Color secondaryTextColor = Color(0xFF000000);
 
   static ThemeData get themeData {
-    return ThemeData(
-      scaffoldBackgroundColor: AppTheme.backgroundColor,
-      primaryColor: AppTheme.backgroundColor,
-      splashColor: AppTheme.backgroundColor,
-      appBarTheme: AppBarTheme(
-        elevation: 0,
-        centerTitle: true,
-        backgroundColor: AppTheme.backgroundColor,
-        titleTextStyle: TextStyle(
-          color: AppTheme.primaryTextColor.withOpacity(.65),
-          fontWeight: FontWeight.w900,
-          fontSize: 20,
-        ),
-        iconTheme: IconThemeData(
-          color: AppTheme.primaryIconColor,
-          opacity: .75,
-        ),
-      ),
-    );
+    return ThemeData();
   }
 }
