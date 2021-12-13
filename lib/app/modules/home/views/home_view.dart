@@ -1,10 +1,10 @@
 import 'dart:html' as html;
 
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/config/messages/app_message.dart';
 import 'package:my_portfolio/app/config/themes/app_theme.dart';
+import 'package:my_portfolio/app/modules/home/widgets/contact_button.dart';
 import 'package:my_portfolio/app/modules/home/widgets/open_button.dart';
 
 class HomeView extends StatelessWidget {
@@ -18,10 +18,7 @@ class HomeView extends StatelessWidget {
         return Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                AppTheme.backgroundColor_1,
-                AppTheme.backgroundColor_2,
-              ],
+              colors: [AppTheme.backgroundColor_1, AppTheme.backgroundColor_2],
             ),
           ),
           child: Column(
@@ -35,14 +32,12 @@ class HomeView extends StatelessWidget {
                 ),
               ),
               ListTile(
-                contentPadding: EdgeInsets.symmetric(vertical: 10),
+                contentPadding: EdgeInsets.zero,
                 minVerticalPadding: 10,
                 title: Container(
                   padding: EdgeInsets.all(10),
-                  child: AutoSizeText(
+                  child: Text(
                     AppMessage.profileName,
-                    minFontSize: 10,
-                    maxFontSize: 20,
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -53,27 +48,22 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                 ),
-                subtitle: AutoSizeText(
+                subtitle: Text(
                   AppMessage.profileDisc,
-                  minFontSize: 10,
-                  maxFontSize: 20,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: AppTheme.primaryTextColor.withOpacity(.75),
                     fontWeight: FontWeight.w700,
                     letterSpacing: 1,
-                    fontSize: 14,
                   ),
                 ),
               ),
               ListTile(
-                contentPadding: EdgeInsets.symmetric(vertical: 10),
+                contentPadding: EdgeInsets.zero,
                 minVerticalPadding: 10,
-                title: AutoSizeText(
+                title: Text(
                   AppMessage.checkButton,
-                  minFontSize: 10,
-                  maxFontSize: 20,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -81,13 +71,15 @@ class HomeView extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                subtitle: Container(
-                  padding: EdgeInsets.all(5),
+                subtitle: SizedBox(
+                  height: 50,
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       OpenButton(
                         image: AppMessage.githubIcon,
+                        message: "GitHub",
                         onTap: () {
                           final String url = AppMessage.githubLink;
                           html.window.open(url, "GitHub");
@@ -95,6 +87,7 @@ class HomeView extends StatelessWidget {
                       ),
                       OpenButton(
                         image: AppMessage.linkedinIcon,
+                        message: "LinkedIn",
                         onTap: () {
                           final String url = AppMessage.linkedinLink;
                           html.window.open(url, "LinkedIn");
@@ -102,6 +95,7 @@ class HomeView extends StatelessWidget {
                       ),
                       OpenButton(
                         image: AppMessage.googlePlayIcon,
+                        message: "Google Play",
                         onTap: () {
                           final String url = AppMessage.googlePlayLink;
                           html.window.open(url, "Google Play");
@@ -112,12 +106,10 @@ class HomeView extends StatelessWidget {
                 ),
               ),
               ListTile(
-                contentPadding: EdgeInsets.symmetric(vertical: 10),
-                minVerticalPadding: 10,
-                title: AutoSizeText(
+                contentPadding: EdgeInsets.zero,
+                minVerticalPadding: 0,
+                subtitle: Text(
                   AppMessage.contactButton,
-                  minFontSize: 10,
-                  maxFontSize: 20,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -125,47 +117,25 @@ class HomeView extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                // subtitle: Container(
-                //   padding: EdgeInsets.all(5),
-                //   child: Row(
-                //     crossAxisAlignment: CrossAxisAlignment.center,
-                //     mainAxisAlignment: MainAxisAlignment.center,
-                //     children: [
-                //       ContactButton(
-                //         image: AppMessage.phoneIcon,
-                //         label: "+212 673 377 573",
-                //         onTap: () {},
-                //       ),
-                //       SizedBox(width: 10),
-                //       ContactButton(
-                //         image: AppMessage.gmailIcon,
-                //         label: "aittata.abderrahim@gmail.com",
-                //         onTap: () {},
-                //       ),
-                //     ],
-                //   ),
-                // ),
               ),
-              Container(
-                padding: EdgeInsets.all(5),
-                child: Row(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  // mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ContactButton(
-                      image: AppMessage.phoneIcon,
-                      label: "+212 673 377 573",
-                      onTap: () {},
-                    ),
-                    SizedBox(width: 10),
-                    ContactButton(
-                      image: AppMessage.gmailIcon,
-                      label: "aittata.abderrahim@gmail.com",
-                      onTap: () {},
-                    ),
-                  ],
+              if (constraints.constrainWidth() >= 700)
+                Container(
+                  padding: EdgeInsets.all(5),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: myList,
+                  ),
+                )
+              else
+                Container(
+                  padding: EdgeInsets.all(5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: myList,
+                  ),
                 ),
-              ),
             ],
           ),
         );
@@ -174,55 +144,20 @@ class HomeView extends StatelessWidget {
   }
 }
 
-class ContactButton extends StatelessWidget {
-  final String image;
-  final String label;
-  final Function()? onTap;
-  const ContactButton({
-    Key? key,
-    required this.image,
-    required this.label,
-    this.onTap,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: MouseRegion(
-        cursor: SystemMouseCursors.click,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              margin: EdgeInsets.all(5),
-              child: Image.asset(
-                image,
-                color: AppTheme.imageColor,
-                width: 30,
-                height: 30,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all(5),
-              child: AutoSizeText(
-                label,
-                minFontSize: 10,
-                maxFontSize: 20,
-                textAlign: TextAlign.center,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  color: AppTheme.primaryTextColor.withOpacity(.75),
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 1,
-                  fontSize: 15,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+List<ContactButton> myList = [
+  ContactButton(
+    image: AppMessage.phoneIcon,
+    label: "+212 673 377 573",
+    onTap: () {},
+  ),
+  ContactButton(
+    image: AppMessage.gmailIcon,
+    label: "aittata.abderrahim@gmail.com",
+    onTap: () {},
+  ),
+  ContactButton(
+    image: AppMessage.locationIcon,
+    label: "Marrakech, MOROCCO",
+    onTap: () {},
+  ),
+];

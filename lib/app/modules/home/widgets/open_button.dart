@@ -3,10 +3,12 @@ import 'package:my_portfolio/app/config/themes/app_theme.dart';
 
 class OpenButton extends StatefulWidget {
   final String image;
+  final String message;
   final Function()? onTap;
   const OpenButton({
     Key? key,
     required this.image,
+    required this.message,
     this.onTap,
   }) : super(key: key);
 
@@ -36,13 +38,16 @@ class _OpenButtonState extends State<OpenButton> {
           });
         },
         cursor: SystemMouseCursors.click,
-        child: Container(
-          margin: EdgeInsets.all(5),
-          child: Image.asset(
-            widget.image,
-            color: _imageColor,
-            width: _imageSize,
-            height: _imageSize,
+        child: Tooltip(
+          message: widget.message,
+          child: Container(
+            margin: EdgeInsets.all(5),
+            child: Image.asset(
+              widget.image,
+              color: _imageColor,
+              width: _imageSize,
+              height: _imageSize,
+            ),
           ),
         ),
       ),

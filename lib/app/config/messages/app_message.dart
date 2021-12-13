@@ -16,6 +16,7 @@ class AppMessage {
   static const String googlePlayIcon = "assets/images/google_play.png";
   static const String phoneIcon = "assets/images/phone.png";
   static const String gmailIcon = "assets/images/gmail.png";
+  static const String locationIcon = "assets/images/location.png";
 
   static const String githubLink = "https://github.com/aittataa";
   static const String linkedinLink = "https://www.linkedin.com/in/abderrahim-ait-tata-0b2a561a2";
