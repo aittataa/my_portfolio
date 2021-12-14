@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/config/themes/app_theme.dart';
 
@@ -34,10 +33,8 @@ class ContactButton extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.all(5),
-              child: AutoSizeText(
+              child: Text(
                 label,
-                minFontSize: 10,
-                maxFontSize: 20,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   color: AppTheme.primaryTextColor.withOpacity(.75),

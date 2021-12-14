@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_portfolio/app/config/functions/app_function.dart';
 import 'package:my_portfolio/app/config/messages/app_message.dart';
-import 'package:my_portfolio/app/routes/app_pages.dart';
 import 'package:my_portfolio/app/shared/splash.dart';
 
 void main() {
@@ -18,15 +17,7 @@ class Portfolio extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      smartManagement: SmartManagement.full,
-      initialRoute: AppPages.INITIAL,
       title: AppMessage.appTitle,
-      theme: ThemeData.dark(),
-      themeMode: ThemeMode.dark,
-      darkTheme: ThemeData.dark(),
-      highContrastDarkTheme: ThemeData.dark(),
-      highContrastTheme: ThemeData.dark(),
-      getPages: AppPages.routes,
       home: Splash(),
     );
   }
