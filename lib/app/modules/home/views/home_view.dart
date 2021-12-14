@@ -7,8 +7,9 @@ import 'package:my_portfolio/app/config/themes/app_theme.dart';
 import 'package:my_portfolio/app/modules/home/widgets/contact_button.dart';
 import 'package:my_portfolio/app/modules/home/widgets/open_button.dart';
 
+import '../../../config/messages/app_message.dart';
+
 class HomeView extends StatelessWidget {
-  //final HomeController _controller = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,26 +80,32 @@ class HomeView extends StatelessWidget {
                     children: [
                       OpenButton(
                         image: AppMessage.githubIcon,
-                        message: "GitHub",
+                        message: AppMessage.githubLabel,
                         onTap: () {
-                          final String url = AppMessage.githubLink;
-                          html.window.open(url, "GitHub");
+                          html.window.open(
+                            AppMessage.githubLink,
+                            AppMessage.githubLabel,
+                          );
                         },
                       ),
                       OpenButton(
                         image: AppMessage.linkedinIcon,
-                        message: "LinkedIn",
+                        message: AppMessage.linkedinLabel,
                         onTap: () {
-                          final String url = AppMessage.linkedinLink;
-                          html.window.open(url, "LinkedIn");
+                          html.window.open(
+                            AppMessage.linkedinLink,
+                            AppMessage.linkedinLabel,
+                          );
                         },
                       ),
                       OpenButton(
                         image: AppMessage.googlePlayIcon,
-                        message: "Google Play",
+                        message: AppMessage.googlePlayLabel,
                         onTap: () {
-                          final String url = AppMessage.googlePlayLink;
-                          html.window.open(url, "Google Play");
+                          html.window.open(
+                            AppMessage.googlePlayLink,
+                            AppMessage.googlePlayLabel,
+                          );
                         },
                       ),
                     ],
@@ -120,7 +127,7 @@ class HomeView extends StatelessWidget {
               ),
               if (constraints.constrainWidth() >= 700)
                 Container(
-                  padding: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(10),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -129,7 +136,7 @@ class HomeView extends StatelessWidget {
                 )
               else
                 Container(
-                  padding: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -147,17 +154,14 @@ class HomeView extends StatelessWidget {
 List<ContactButton> myList = [
   ContactButton(
     image: AppMessage.phoneIcon,
-    label: "+212 673 377 573",
-    onTap: () {},
+    label: AppMessage.profilePhone,
   ),
   ContactButton(
     image: AppMessage.gmailIcon,
-    label: "aittata.abderrahim@gmail.com",
-    onTap: () {},
+    label: AppMessage.profileEmail,
   ),
   ContactButton(
     image: AppMessage.locationIcon,
-    label: "Marrakech, MOROCCO",
-    onTap: () {},
+    label: AppMessage.profileAddress,
   ),
 ];

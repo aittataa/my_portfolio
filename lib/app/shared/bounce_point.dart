@@ -4,38 +4,15 @@ import 'package:my_portfolio/app/config/constants/app_constant.dart';
 import 'package:my_portfolio/app/config/themes/app_theme.dart';
 
 class BouncePoint extends StatelessWidget {
-  final bool? state;
   final double size;
-  final Color? color;
-
-  const BouncePoint({
-    Key? key,
-    this.state,
-    this.size = 64,
-    this.color = AppTheme.mainColor,
-  }) : super(key: key);
+  const BouncePoint({Key? key, this.size = 64}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    switch (state) {
-      case true:
-        return SpinKitThreeBounce(
-          size: size,
-          color: color,
-          duration: AppConstant.durationSplash,
-        );
-      case false:
-        return SpinKitCubeGrid(
-          size: size,
-          color: color,
-          duration: AppConstant.durationSplash,
-        );
-      default:
-        return SpinKitSquareCircle(
-          size: size,
-          color: color,
-          duration: AppConstant.durationSplash,
-        );
-    }
+    return SpinKitThreeBounce(
+      size: size,
+      color: AppTheme.mainColor,
+      duration: AppConstant.durationSplash,
+    );
   }
 }

@@ -1,13 +1,9 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_portfolio/app/config/constants/app_constant.dart';
 import 'package:my_portfolio/app/config/functions/app_function.dart';
 import 'package:my_portfolio/app/config/messages/app_message.dart';
-import 'package:my_portfolio/app/config/themes/app_theme.dart';
-import 'package:my_portfolio/app/modules/home/views/home_view.dart';
 import 'package:my_portfolio/app/routes/app_pages.dart';
-import 'package:my_portfolio/app/shared/bounce_point.dart';
+import 'package:my_portfolio/app/shared/splash.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,17 +21,13 @@ class Portfolio extends StatelessWidget {
       smartManagement: SmartManagement.full,
       initialRoute: AppPages.INITIAL,
       title: AppMessage.appTitle,
-      theme: AppTheme.themeData,
+      theme: ThemeData.dark(),
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData.dark(),
+      highContrastDarkTheme: ThemeData.dark(),
+      highContrastTheme: ThemeData.dark(),
       getPages: AppPages.routes,
-      home: AnimatedSplashScreen(
-        splash: BouncePoint(),
-        nextScreen: HomeView(),
-        curve: AppConstant.curve,
-        backgroundColor: AppTheme.transparentColor,
-        splashTransition: SplashTransition.slideTransition,
-        animationDuration: AppConstant.durationSplash,
-        splashIconSize: double.infinity,
-      ),
+      home: Splash(),
     );
   }
 }

@@ -7,6 +7,9 @@ class AppMessage {
   static const String profileName = "AIT TATA ABDERRAHIM";
   static const String profileTitle = "Mobile Application Developer";
   static const String profileDisc = "Self-taught Mobile Application Developer,\nbased in Marrakech, MOROCCO.";
+  static const String profilePhone = "+212 673 377 573";
+  static const String profileEmail = "aittata.abderrahim@gmail.com";
+  static const String profileAddress = "Marrakech, MOROCCO";
 
   /// TODO : App Icons
   static const String appIcon = "assets/icons/app_icon.png";
@@ -17,6 +20,10 @@ class AppMessage {
   static const String phoneIcon = "assets/images/phone.png";
   static const String gmailIcon = "assets/images/gmail.png";
   static const String locationIcon = "assets/images/location.png";
+
+  static const String githubLabel = "GitHub";
+  static const String linkedinLabel = "LinkedIn";
+  static const String googlePlayLabel = "Google Play";
 
   static const String githubLink = "https://github.com/aittataa";
   static const String linkedinLink = "https://www.linkedin.com/in/abderrahim-ait-tata-0b2a561a2";
