@@ -1,7 +1,7 @@
 class AppMessage {
   AppMessage._();
 
-  /// TODO : App Icons
+  /// TODO : App Data
   static const String appTitle = "AIT TATA ABDERRAHIM";
   static const String profileImage = "assets/images/profile.png";
   static const String profileName = "AIT TATA ABDERRAHIM";
@@ -25,14 +25,13 @@ class AppMessage {
   static const String linkedinLabel = "LinkedIn";
   static const String googlePlayLabel = "Google Play";
 
-  static const String githubLink = "https://github.com/aittataa";
-  static const String linkedinLink = "https://www.linkedin.com/in/abderrahim-ait-tata-0b2a561a2";
+  static const String githubLink = "https://github.com/aittataa/";
+  static const String linkedinLink = "https://www.linkedin.com/in/abderrahim-aittata/";
   static const String googlePlayLink = "https://play.google.com/store/apps/developer?id=Skiod+Apps";
 
-  /// TODO : Initial View
-
   /// TODO : Home View
-  static const String labelHome = "Home";
   static const String contactButton = "Contact with me";
+  static const String orButton = "- OR -";
   static const String checkButton = "Check my profiles";
+  static const String downloadButton = "Download My Resume";
 }

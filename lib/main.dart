@@ -17,7 +17,7 @@ class Portfolio extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: AppMessage.appTitle,
+      title: AppMessage.profileName,
       home: Splash(),
     );
   }

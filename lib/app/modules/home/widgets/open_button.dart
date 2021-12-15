@@ -40,8 +40,8 @@ class _OpenButtonState extends State<OpenButton> {
         cursor: SystemMouseCursors.click,
         child: Tooltip(
           message: widget.message,
-          child: Container(
-            margin: EdgeInsets.all(5),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: Image.asset(
               widget.image,
               color: _imageColor,

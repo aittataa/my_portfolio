@@ -29,18 +29,18 @@ class HomeView extends StatelessWidget {
               Expanded(
                 child: CircleAvatar(
                   radius: 100,
+                  backgroundColor: AppTheme.transparentColor,
                   child: Image.asset(AppMessage.profileImage),
                 ),
               ),
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 minVerticalPadding: 10,
-                title: Container(
-                  padding: EdgeInsets.all(10),
-                  child: Text(
+                title: Padding(
+                  padding: EdgeInsets.all(5),
+                  child: SelectableText(
                     AppMessage.profileName,
                     textAlign: TextAlign.center,
-                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: AppTheme.primaryTextColor,
                       fontWeight: FontWeight.w900,
@@ -49,20 +49,23 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                 ),
-                subtitle: Text(
-                  AppMessage.profileDisc,
-                  textAlign: TextAlign.center,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: AppTheme.primaryTextColor.withOpacity(.75),
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 1,
+                subtitle: Padding(
+                  padding: EdgeInsets.all(5),
+                  child: Text(
+                    AppMessage.profileDisc,
+                    textAlign: TextAlign.center,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: AppTheme.primaryTextColor.withOpacity(.75),
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1,
+                    ),
                   ),
                 ),
               ),
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                minVerticalPadding: 10,
+                minVerticalPadding: 0,
                 title: Text(
                   AppMessage.checkButton,
                   textAlign: TextAlign.center,
@@ -70,6 +73,7 @@ class HomeView extends StatelessWidget {
                   style: TextStyle(
                     color: AppTheme.primaryTextColor,
                     fontWeight: FontWeight.w500,
+                    letterSpacing: 1,
                   ),
                 ),
                 subtitle: SizedBox(
@@ -115,19 +119,45 @@ class HomeView extends StatelessWidget {
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 minVerticalPadding: 0,
-                subtitle: Text(
+                title: SizedBox(
+                  //height: 50,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    //children: [DownloadButton()],
+                  ),
+                ),
+                subtitle: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    AppMessage.orButton,
+                    textAlign: TextAlign.center,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: AppTheme.primaryTextColor,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ),
+              ),
+              ListTile(
+                contentPadding: EdgeInsets.zero,
+                minVerticalPadding: 0,
+                title: Text(
                   AppMessage.contactButton,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: AppTheme.primaryTextColor,
                     fontWeight: FontWeight.w500,
+                    letterSpacing: 1,
                   ),
                 ),
               ),
               if (constraints.constrainWidth() >= 700)
-                Container(
-                  padding: EdgeInsets.all(10),
+                Padding(
+                  padding: EdgeInsets.all(5),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -135,14 +165,27 @@ class HomeView extends StatelessWidget {
                   ),
                 )
               else
-                Container(
-                  padding: EdgeInsets.all(10),
+                Padding(
+                  padding: EdgeInsets.all(5),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: myList,
                   ),
                 ),
+              Padding(
+                padding: EdgeInsets.all(5),
+                child: Text(
+                  "Copyright © ${DateTime.now().year}, ${AppMessage.profileName}. All Rights Reserved.",
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: AppTheme.primaryTextColor.withOpacity(.25),
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1,
+                    fontSize: 10,
+                  ),
+                ),
+              )
             ],
           ),
         );

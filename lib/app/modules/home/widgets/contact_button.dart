@@ -33,9 +33,8 @@ class ContactButton extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.all(5),
-              child: Text(
+              child: SelectableText(
                 label,
-                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   color: AppTheme.primaryTextColor.withOpacity(.75),
                   fontWeight: FontWeight.w900,
