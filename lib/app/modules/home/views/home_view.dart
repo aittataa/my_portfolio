@@ -13,6 +13,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawerScrimColor: AppTheme.transparentColor,
       backgroundColor: AppTheme.transparentColor,
       resizeToAvoidBottomInset: false,
       body: LayoutBuilder(builder: (context, constraints) {
@@ -120,11 +121,9 @@ class HomeView extends StatelessWidget {
                 contentPadding: EdgeInsets.zero,
                 minVerticalPadding: 0,
                 title: SizedBox(
-                  //height: 50,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    //children: [DownloadButton()],
                   ),
                 ),
                 subtitle: Padding(
@@ -176,10 +175,10 @@ class HomeView extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.all(5),
                 child: Text(
-                  "Copyright © ${DateTime.now().year}, ${AppMessage.profileName}. All Rights Reserved.",
+                  AppMessage.copyright,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                    color: AppTheme.primaryTextColor.withOpacity(.25),
+                    color: AppTheme.primaryTextColor.withOpacity(.5),
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1,
                     fontSize: 10,

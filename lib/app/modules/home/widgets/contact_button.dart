@@ -16,34 +16,33 @@ class ContactButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: MouseRegion(
-        cursor: SystemMouseCursors.click,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(5),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: Container(
+              height: 30,
+              width: 30,
               child: Image.asset(
                 image,
                 color: AppTheme.imageColor,
-                width: 25,
-                height: 25,
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(5),
-              child: SelectableText(
-                label,
-                style: TextStyle(
-                  color: AppTheme.primaryTextColor.withOpacity(.75),
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 1,
-                ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(5),
+            child: SelectableText(
+              label,
+              style: TextStyle(
+                color: AppTheme.primaryTextColor.withOpacity(.75),
+                fontWeight: FontWeight.w900,
+                letterSpacing: 1,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

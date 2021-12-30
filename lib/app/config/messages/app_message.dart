@@ -34,4 +34,5 @@ class AppMessage {
   static const String orButton = "- OR -";
   static const String checkButton = "Check my profiles";
   static const String downloadButton = "Download My Resume";
+  static String copyright = "Copyright © ${DateTime.now().year}, $profileName. All Rights Reserved.";
 }
