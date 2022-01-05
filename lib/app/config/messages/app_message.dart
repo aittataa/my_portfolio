@@ -27,7 +27,7 @@ class AppMessage {
 
   static const String githubLink = "https://github.com/aittataa/";
   static const String linkedinLink = "https://www.linkedin.com/in/abderrahim-aittata/";
-  static const String googlePlayLink = "https://play.google.com/store/apps/developer?id=aittata+Store";
+  static const String googlePlayLink = "https://play.google.com/store/apps/dev?id=8426220796558715509";
 
   /// TODO : Home View
   static const String contactButton = "Contact with me";
