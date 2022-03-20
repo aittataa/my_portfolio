@@ -8,6 +8,7 @@ class AppMessage {
   static const String profileTitle = "Mobile Application Developer";
   static const String profileDisc = "Self-taught Mobile Application Developer,\nbased in Marrakech, MOROCCO.";
   static const String profilePhone = "+212 673 377 573";
+  static const String profilePhone_1 = "wa.me/+212673377573";
   static const String profileEmail = "aittata.abderrahim@gmail.com";
   static const String profileAddress = "Marrakech, MOROCCO";
 

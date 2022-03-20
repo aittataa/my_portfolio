@@ -1,13 +1,11 @@
 import 'dart:html' as html;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/app/config/messages/app_message.dart';
-import 'package:my_portfolio/app/config/themes/app_theme.dart';
-import 'package:my_portfolio/app/modules/home/widgets/contact_button.dart';
-import 'package:my_portfolio/app/modules/home/widgets/open_button.dart';
 
-import '../../../config/messages/app_message.dart';
+import '../../../config/app_message.dart';
+import '../../../config/app_theme.dart';
+import '../widgets/contact_button.dart';
+import '../widgets/open_button.dart';
 
 class HomeView extends StatelessWidget {
   @override

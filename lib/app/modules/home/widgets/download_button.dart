@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/app/config/messages/app_message.dart';
-import 'package:my_portfolio/app/config/themes/app_theme.dart';
+
+import '../../../config/app_message.dart';
+import '../../../config/app_theme.dart';
 
 class DownloadButton extends StatelessWidget {
   final Function()? onPressed;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/app/config/themes/app_theme.dart';
+
+import '../../../config/app_theme.dart';
 
 class ContactButton extends StatelessWidget {
   final String image;
