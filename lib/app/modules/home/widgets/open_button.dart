@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/app/config/app_constant.dart';
 
 import '../../../config/app_theme.dart';
 
@@ -14,22 +15,26 @@ class OpenButton extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<OpenButton> createState() => _OpenButtonState();
+  State<OpenButton> createState() => _OpenButtonState(image, message, onTap);
 }
 
 class _OpenButtonState extends State<OpenButton> {
+  final String image;
+  final String message;
+  final Function()? onTap;
+  _OpenButtonState(this.image, this.message, this.onTap);
   late Color _imageColor = AppTheme.imageColor.withOpacity(.75);
   late double _imageSize = 30;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: widget.onTap,
+      onTap: onTap,
       child: MouseRegion(
         onEnter: (enterEvent) {
           setState(() {
             _imageColor = AppTheme.imageColor;
-            _imageSize = 35;
+            _imageSize = 40;
           });
         },
         onExit: (exitEvent) {
@@ -40,11 +45,13 @@ class _OpenButtonState extends State<OpenButton> {
         },
         cursor: SystemMouseCursors.click,
         child: Tooltip(
-          message: widget.message,
-          child: Padding(
+          message: message,
+          child: AnimatedContainer(
+            curve: AppConstant.curve,
+            duration: AppConstant.durationAnimated,
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Image.asset(
-              widget.image,
+              "$image",
               color: _imageColor,
               width: _imageSize,
               height: _imageSize,

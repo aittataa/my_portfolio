@@ -29,34 +29,33 @@ class HomeView extends StatelessWidget {
                 child: CircleAvatar(
                   radius: 100,
                   backgroundColor: AppTheme.transparentColor,
-                  child: Image.asset(AppMessage.profileImage),
+                  child: Image.asset("${AppMessage.profileImage}"),
                 ),
               ),
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                minVerticalPadding: 10,
+                minVerticalPadding: 25,
                 title: Padding(
                   padding: EdgeInsets.all(5),
                   child: SelectableText(
-                    AppMessage.profileName,
+                    "${AppMessage.profileName}",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: AppTheme.primaryTextColor,
                       fontWeight: FontWeight.w900,
                       letterSpacing: 1,
-                      fontSize: 18,
                     ),
                   ),
                 ),
                 subtitle: Padding(
                   padding: EdgeInsets.all(5),
                   child: Text(
-                    AppMessage.profileDisc,
+                    "${AppMessage.profileDisc}",
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: AppTheme.primaryTextColor.withOpacity(.75),
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.bold,
                       letterSpacing: 1,
                     ),
                   ),
@@ -66,17 +65,17 @@ class HomeView extends StatelessWidget {
                 contentPadding: EdgeInsets.zero,
                 minVerticalPadding: 0,
                 title: Text(
-                  AppMessage.checkButton,
+                  "${AppMessage.checkButton}",
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: AppTheme.primaryTextColor,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.bold,
                     letterSpacing: 1,
                   ),
                 ),
                 subtitle: SizedBox(
-                  height: 50,
+                  height: 75,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -85,30 +84,21 @@ class HomeView extends StatelessWidget {
                         image: AppMessage.githubIcon,
                         message: AppMessage.githubLabel,
                         onTap: () {
-                          html.window.open(
-                            AppMessage.githubLink,
-                            AppMessage.githubLabel,
-                          );
+                          html.window.open(AppMessage.githubLink, AppMessage.githubLabel);
                         },
                       ),
                       OpenButton(
                         image: AppMessage.linkedinIcon,
                         message: AppMessage.linkedinLabel,
                         onTap: () {
-                          html.window.open(
-                            AppMessage.linkedinLink,
-                            AppMessage.linkedinLabel,
-                          );
+                          html.window.open(AppMessage.linkedinLink, AppMessage.linkedinLabel);
                         },
                       ),
                       OpenButton(
                         image: AppMessage.googlePlayIcon,
                         message: AppMessage.googlePlayLabel,
                         onTap: () {
-                          html.window.open(
-                            AppMessage.googlePlayLink,
-                            AppMessage.googlePlayLabel,
-                          );
+                          html.window.open(AppMessage.googlePlayLink, AppMessage.googlePlayLabel);
                         },
                       ),
                     ],
@@ -118,21 +108,15 @@ class HomeView extends StatelessWidget {
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 minVerticalPadding: 0,
-                title: SizedBox(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                  ),
-                ),
-                subtitle: Padding(
+                title: Padding(
                   padding: const EdgeInsets.all(10),
                   child: Text(
-                    AppMessage.orButton,
+                    "${AppMessage.orButton}",
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: AppTheme.primaryTextColor,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.bold,
                       letterSpacing: 1,
                     ),
                   ),
@@ -142,38 +126,40 @@ class HomeView extends StatelessWidget {
                 contentPadding: EdgeInsets.zero,
                 minVerticalPadding: 0,
                 title: Text(
-                  AppMessage.contactButton,
+                  "${AppMessage.contactButton}",
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: AppTheme.primaryTextColor,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.bold,
                     letterSpacing: 1,
                   ),
                 ),
               ),
-              if (constraints.constrainWidth() >= 700)
-                Padding(
-                  padding: EdgeInsets.all(5),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: myList,
-                  ),
-                )
-              else
-                Padding(
-                  padding: EdgeInsets.all(5),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: myList,
-                  ),
-                ),
+              Builder(builder: (context) {
+                if (constraints.constrainWidth() >= 700)
+                  return Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: myList,
+                    ),
+                  );
+                else
+                  return Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: myList,
+                    ),
+                  );
+              }),
               Padding(
                 padding: EdgeInsets.all(5),
                 child: Text(
-                  AppMessage.copyright,
+                  "${AppMessage.copyright}",
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: AppTheme.primaryTextColor.withOpacity(.5),

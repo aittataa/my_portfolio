@@ -8,6 +8,6 @@ class AppConstant {
 
   /// TODO : Durations
   static const Duration durationSplash = Duration(milliseconds: 1500);
-  static const Duration durationAnimated = Duration(milliseconds: 1500);
+  static const Duration durationAnimated = Duration(milliseconds: 1000);
   static const Duration duration = Duration(milliseconds: 1500);
 }
