@@ -6,7 +6,7 @@ import '../config/app_theme.dart';
 
 class BouncePoint extends StatelessWidget {
   final double size;
-  const BouncePoint({Key? key, this.size = 64}) : super(key: key);
+  const BouncePoint({Key? key, this.size = 75}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

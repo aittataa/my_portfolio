@@ -180,22 +180,16 @@ List<ContactButton> myList = [
   ContactButton(
     image: AppMessage.phoneIcon,
     label: AppMessage.profilePhone,
-    onTap: () {
-      AppFunction.launchURL("${AppMessage.phoneLink}");
-    },
+    onTap: () => {AppFunction.launchURL("${AppMessage.phoneLink}")},
   ),
   ContactButton(
     image: AppMessage.gmailIcon,
     label: AppMessage.profileEmail,
-    onTap: () {
-      AppFunction.launchURL("${AppMessage.emailLink}");
-    },
+    onTap: () => {AppFunction.launchURL("${AppMessage.emailLink}")},
   ),
   ContactButton(
     image: AppMessage.locationIcon,
     label: AppMessage.profileAddress,
-    onTap: () {
-      AppFunction.launchURL("${AppMessage.addressLink}");
-    },
+    onTap: () => {AppFunction.launchURL("${AppMessage.addressLink}")},
   ),
 ];
