@@ -10,9 +10,9 @@ class AppMessage {
   static const String profilePhone = "+212 673 377 573";
   static const String profileEmail = "aittata.abderrahim@gmail.com";
   static const String profileAddress = "Marrakech, MOROCCO";
-  static const String phoneLink = "wa.me/+212673377573";
-  static const String emailLink = " ";
-  static const String addressLink = " ";
+  static const String phoneLink = "https://wa.me/+212673377573/";
+  static const String emailLink = "mailto:$profileEmail";
+  static const String addressLink = "https://goo.gl/maps/AYztj5wP4QCR9mnE8/";
 
   /// TODO : App Icons
   static const String appIcon = "assets/icons/app_icon.png";

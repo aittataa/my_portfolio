@@ -1,6 +1,5 @@
-import 'dart:html' as html;
-
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/app/config/app_function.dart';
 
 import '../../../config/app_message.dart';
 import '../../../config/app_theme.dart';
@@ -84,21 +83,21 @@ class HomeView extends StatelessWidget {
                         image: AppMessage.githubIcon,
                         message: AppMessage.githubLabel,
                         onTap: () {
-                          html.window.open(AppMessage.githubLink, AppMessage.githubLabel);
+                          AppFunction.launchURL("${AppMessage.githubLink}");
                         },
                       ),
                       OpenButton(
                         image: AppMessage.linkedinIcon,
                         message: AppMessage.linkedinLabel,
                         onTap: () {
-                          html.window.open(AppMessage.linkedinLink, AppMessage.linkedinLabel);
+                          AppFunction.launchURL("${AppMessage.linkedinLink}");
                         },
                       ),
                       OpenButton(
                         image: AppMessage.googlePlayIcon,
                         message: AppMessage.googlePlayLabel,
                         onTap: () {
-                          html.window.open(AppMessage.googlePlayLink, AppMessage.googlePlayLabel);
+                          AppFunction.launchURL("${AppMessage.googlePlayLink}");
                         },
                       ),
                     ],
@@ -181,13 +180,22 @@ List<ContactButton> myList = [
   ContactButton(
     image: AppMessage.phoneIcon,
     label: AppMessage.profilePhone,
+    onTap: () {
+      AppFunction.launchURL("${AppMessage.phoneLink}");
+    },
   ),
   ContactButton(
     image: AppMessage.gmailIcon,
     label: AppMessage.profileEmail,
+    onTap: () {
+      AppFunction.launchURL("${AppMessage.emailLink}");
+    },
   ),
   ContactButton(
     image: AppMessage.locationIcon,
     label: AppMessage.profileAddress,
+    onTap: () {
+      AppFunction.launchURL("${AppMessage.addressLink}");
+    },
   ),
 ];
