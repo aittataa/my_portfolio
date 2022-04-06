@@ -1,6 +1,8 @@
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'app_theme.dart';
+
 class AppFunction {
   AppFunction._();
 
@@ -12,7 +14,20 @@ class AppFunction {
     }
   }
 
-  static configureDependencies() {
+  static get configureDependencies {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive, overlays: []);
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        systemNavigationBarColor: AppTheme.transparentColor,
+        systemNavigationBarDividerColor: AppTheme.transparentColor,
+        systemNavigationBarIconBrightness: Brightness.dark,
+        systemNavigationBarContrastEnforced: true,
+        statusBarColor: AppTheme.transparentColor,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.light,
+        systemStatusBarContrastEnforced: true,
+      ),
+    );
   }
 }

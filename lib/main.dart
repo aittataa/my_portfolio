@@ -9,7 +9,7 @@ import 'app/shared/splash.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setUrlStrategy(PathUrlStrategy());
-  AppFunction.configureDependencies();
+  AppFunction.configureDependencies;
   runApp(Portfolio());
 }
 
