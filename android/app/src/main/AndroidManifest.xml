@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aittataa.my_portfolio">
+    package="com.aittata_abderrahim.app">
    <application
-        android:label="my_portfolio"
+        android:label="AIT TATA ABDERRAHIM"
         android:icon="@mipmap/app_icon_round">
         <activity
             android:name=".MainActivity"
