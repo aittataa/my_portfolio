@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/app/config/app_constant.dart';
 import 'package:my_portfolio/app/config/app_function.dart';
 
 import '../../../config/app_message.dart';
@@ -14,6 +15,7 @@ class HomeView extends StatelessWidget {
       backgroundColor: AppTheme.transparentColor,
       resizeToAvoidBottomInset: false,
       body: LayoutBuilder(builder: (context, constraints) {
+        print(constraints.maxWidth);
         return SingleChildScrollView(
           child: ConstrainedBox(
             constraints: BoxConstraints(
@@ -35,9 +37,10 @@ class HomeView extends StatelessWidget {
                         child: Image.asset("${AppMessage.profileImage}"),
                       ),
                     ),
+                    SizedBox(height: 10),
                     ListTile(
                       contentPadding: EdgeInsets.zero,
-                      minVerticalPadding: 25,
+                      minVerticalPadding: 0,
                       title: Padding(
                         padding: EdgeInsets.all(5),
                         child: SelectableText(
@@ -64,19 +67,35 @@ class HomeView extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    ///
                     ListTile(
                       contentPadding: EdgeInsets.zero,
                       minVerticalPadding: 0,
-                      title: Text(
-                        "${AppMessage.checkButton}",
-                        textAlign: TextAlign.center,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: AppTheme.primaryTextColor,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 1,
+                      title: TitleTile(title: "My Projects"),
+                    ),
+                    Wrap(
+                      children: [
+                        Container(
+                          width: 350,
+                          height: 300,
+                          margin: EdgeInsets.all(25),
+                          decoration: BoxDecoration(
+                            color: AppTheme.backColor,
+                            borderRadius: BorderRadius.circular(25),
+                            boxShadow: [
+                              AppConstant.boxShadow,
+                            ],
+                          ),
                         ),
-                      ),
+                      ],
+                    ),
+
+                    ///
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      minVerticalPadding: 0,
+                      title: TitleTile(title: AppMessage.checkButton),
                       subtitle: SizedBox(
                         height: 75,
                         child: Row(
@@ -128,16 +147,7 @@ class HomeView extends StatelessWidget {
                     ListTile(
                       contentPadding: EdgeInsets.zero,
                       minVerticalPadding: 0,
-                      title: Text(
-                        "${AppMessage.contactButton}",
-                        textAlign: TextAlign.center,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: AppTheme.primaryTextColor,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 1,
-                        ),
-                      ),
+                      title: TitleTile(title: AppMessage.contactButton),
                     ),
                     Builder(builder: (context) {
                       if (constraints.constrainWidth() >= 700)
@@ -179,6 +189,28 @@ class HomeView extends StatelessWidget {
           ),
         );
       }),
+    );
+  }
+}
+
+class TitleTile extends StatelessWidget {
+  final String title;
+  const TitleTile({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      title,
+      textAlign: TextAlign.center,
+      overflow: TextOverflow.ellipsis,
+      style: TextStyle(
+        color: AppTheme.primaryTextColor,
+        fontWeight: FontWeight.bold,
+        letterSpacing: 1,
+      ),
     );
   }
 }
