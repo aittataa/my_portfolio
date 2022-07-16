@@ -1,7 +1,7 @@
 name: my_portfolio
 version: 1.0.0+1
 description: My Portfolio.
-environment: 
+environment:
   sdk: '>=2.15.0 <3.0.0'
 
 dependencies: 
@@ -15,13 +15,12 @@ dependencies:
 
 dev_dependencies:
   url_strategy: 0.2.0
-  flutter_test: 
+  flutter_test:
     sdk: flutter
 
-
-flutter:
-  uses-material-design: true
-  assets:
+flutter: 
+  assets: 
     - assets/icons/
     - assets/images/
+  uses-material-design: true
 
