@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/app/config/app_constant.dart';
 import 'package:my_portfolio/app/config/app_function.dart';
 
 import '../../../config/app_message.dart';
@@ -78,14 +77,17 @@ class HomeView extends StatelessWidget {
                       children: [
                         Container(
                           width: 350,
-                          height: 300,
+                          height: 500,
                           margin: EdgeInsets.all(25),
                           decoration: BoxDecoration(
-                            color: AppTheme.backColor,
-                            borderRadius: BorderRadius.circular(25),
-                            boxShadow: [
-                              AppConstant.boxShadow,
-                            ],
+                            //color: AppTheme.backColor,
+                            //borderRadius: BorderRadius.circular(25),
+                            //boxShadow: [AppConstant.boxShadow],
+                            image: DecorationImage(
+                              image: AssetImage(
+                                AppMessage.pollup_icon,
+                              ),
+                            ),
                           ),
                         ),
                       ],

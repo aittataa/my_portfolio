@@ -38,4 +38,14 @@ class AppMessage {
   static const String checkButton = "Check my profiles";
   static const String downloadButton = "Download My Resume";
   static String copyright = "Copyright © ${DateTime.now().year}, $profileName. All Rights Reserved.";
+
+  /// TODO : Pollup
+  static const String pollup_icon = "assets/projects/pollup/app_icon.png";
+  // static const String pollup_icon_splash_view = "assets/projects/pollup/splash_view.png";
+  // static const String pollup_icon_privacy_policy = "assets/projects/pollup/privacy_policy.png";
+  // static const String pollup_icon_login_view = "assets/projects/pollup/login_view.png";
+  // static const String pollup_icon_signup_view = "assets/projects/pollup/signup_view.png";
+  // static const String pollup_icon_sends_view = "assets/projects/pollup/sends_view.png";
+  // static const String pollup_icon_receives_view = "assets/projects/pollup/receives_view.png";
+  // static const String pollup_icon_contacts_view = "assets/projects/pollup/receives_view.png";
 }
