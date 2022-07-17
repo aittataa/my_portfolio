@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/config/app_function.dart';
 
+import '../../../config/app_constant.dart';
 import '../../../config/app_message.dart';
 import '../../../config/app_theme.dart';
 import '../widgets/contact_button.dart';
@@ -22,6 +23,7 @@ class HomeView extends StatelessWidget {
             ),
             child: IntrinsicHeight(
               child: Container(
+                padding: EdgeInsets.only(top: 25),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [AppTheme.backgroundColor_1, AppTheme.backgroundColor_2],
@@ -73,24 +75,34 @@ class HomeView extends StatelessWidget {
                       minVerticalPadding: 0,
                       title: TitleTile(title: "My Projects"),
                     ),
-                    Wrap(
-                      children: [
-                        Container(
-                          width: 350,
-                          height: 500,
-                          margin: EdgeInsets.all(25),
-                          decoration: BoxDecoration(
-                            //color: AppTheme.backColor,
-                            //borderRadius: BorderRadius.circular(25),
-                            //boxShadow: [AppConstant.boxShadow],
-                            image: DecorationImage(
-                              image: AssetImage(
-                                AppMessage.pollup_icon,
-                              ),
+                    Container(
+                      width: 300,
+                      height: 400,
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: AppTheme.backColor.withOpacity(.25),
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [AppConstant.boxShadow],
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Image.asset(
+                              AppMessage.pollup_icon,
+                              width: 200,
+                              height: 200,
                             ),
                           ),
-                        ),
-                      ],
+                          ListTile(
+                            title: TitleTile(
+                              title: "Pollup",
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
 
                     ///
